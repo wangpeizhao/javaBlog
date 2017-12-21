@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.dao.ManagerMapper">
+	<!-- 根据Account到manager表查询管理员信息 -->
+	<resultMap id="BaseResultMap" type="com.blog.model.Manager">
+	    <id column="manager_id" jdbcType="INTEGER" property="managerId" />
+	    <result column="account" jdbcType="VARCHAR" property="account" />
+	    <result column="password" jdbcType="VARCHAR" property="password" />
+	    <result column="manager_name" jdbcType="VARCHAR" property="managerName" />
+    </resultMap>
+	<select id="GetManagerByAccount" resultMap="BaseResultMap">
+		select * from manager where account=#{account}
+	</select>
+</mapper>
