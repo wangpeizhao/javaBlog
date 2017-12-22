@@ -85,7 +85,7 @@ public class Newsinfo {
     
     @Override
     public String toString(){
-    	return "NewsInfo[newsId = "+newsId+",newsTitle = "+newsTitle+",newsSummary = "+newsSummary+",newsPic = "+newsPic
-    			+",createdate = "+createdate+",authorId = "+authorId+",topicId = "+topicId+",newsContent = "+newsContent+"]";
+    	return "NewsInfo:{newsId = "+newsId+",newsTitle = "+newsTitle+",newsSummary = "+newsSummary+",newsPic = "+newsPic
+    			+",createdate = "+createdate+",authorId = "+authorId+",topicId = "+topicId+",newsContent = "+newsContent+"}";
     }
 }

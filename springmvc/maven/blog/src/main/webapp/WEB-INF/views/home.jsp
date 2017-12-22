@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.io.*,java.util.*" %>
 <%@ page session="true"%>
 <html>
 <head>
@@ -160,7 +161,31 @@
 			</div>
 		</div>
 		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<div class="row clearfix">
+					<c:forEach items="${newsinfoListsGroupByTopic}" var="ListsByTopic" varStatus="status">
+
+						<div class="col-md-2 column">
+							
+							<ul>
+								<c:forEach items="${ListsByTopic.value}" var="item" varStatus="status2">
+									<li>
+										 <a href="?tid=${item.newsId}">${item.newsTitle}</a>
+										 <p>${item.newsSummary}</p>
+									</li>
+								</c:forEach>
+							</ul>
+						</div>
+					</c:forEach>
+				</div>
+			</div>
 			<div class="col-md-4 column">
+				<c:forEach items="${newsinfoLists}" var="item">
+					<li>
+						 <a href="?tid=${item.newsId}">${item.newsTitle}</a>
+						 <p>${item.newsSummary}</p>
+					</li>
+				</c:forEach>
 				<h2>
 					Heading
 				</h2>
