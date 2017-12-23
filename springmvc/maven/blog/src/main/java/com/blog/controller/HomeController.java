@@ -70,7 +70,7 @@ public class HomeController {
 		//Topic
 		List<Topic> topicLists = topicService.getTopicLists();
 		mav.addObject("topicLists",topicLists);
-		HashMap<Integer,Object> topic=new HashMap<Integer,Object>();
+		HashMap<Integer,String> topic=new HashMap<Integer,String>();
 		if(topicLists.size()>0){
 			for(Topic k:topicLists){
 				int tid = k.getTopicId();
@@ -78,7 +78,7 @@ public class HomeController {
 			}
 		}
 		mav.addObject("topics",topic);
-		Out.println(topic);
+//		Out.println(topic);
 		
 		//Test
 		ArrayList<String> lists = new ArrayList<String>();

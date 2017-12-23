@@ -15,6 +15,9 @@
 <link rel="stylesheet" type="text/css" href="<%=basePath%>resources/css/bootstrap.3.0.1/bootstrap.min.css">
 <script type="text/javascript" src="<%=basePath %>resources/js/jquery.1.11.0.min.js"></script>
 <script type="text/javascript" src="<%=basePath %>resources/js/bootstrap.3.0.1/bootstrap.min.js"></script>
+<style type="text/css">
+	.groupByTopic ul{padding-left: 0!important;}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -161,12 +164,12 @@
 			</div>
 		</div>
 		<div class="row clearfix">
-			<div class="col-md-12 column">
-				<div class="row clearfix">
+			<div class="row clearfix">
+				<div class="col-md-12 column groupByTopic">
 					<c:forEach items="${newsinfoListsGroupByTopic}" var="ListsByTopic" varStatus="status">
 
 						<div class="col-md-2 column">
-							
+							<h3>${topics[ListsByTopic.key]}</h3>
 							<ul>
 								<c:forEach items="${ListsByTopic.value}" var="item" varStatus="status2">
 									<li>
